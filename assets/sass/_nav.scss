@@ -1,0 +1,30 @@
+nav {
+  background: linear-gradient(180deg, #E5D6B7 0%, #BFAA8D 100%);
+  z-index: 1;
+  @include media-breakpoint-up(md) {
+    position: sticky;
+    top: 0;
+  }
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+  ul {
+    @include list(0, 0, none);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      display: block;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      color: $black;
+      @include media-breakpoint-up(md) {
+        padding-left: 45px;
+        padding-right: 45px;
+      }
+      &:hover {
+        background-color: rgba(#a88b5f, 0.3);
+      }
+    }
+  }
+}

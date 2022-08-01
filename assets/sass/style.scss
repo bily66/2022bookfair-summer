@@ -1,0 +1,64 @@
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
+@import "./bootstrap/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "common";
+@import "bootstrap/bootstrap";
+
+@import "slick";
+
+@import "header";
+@import "nav";
+@import "hamburger";
+@import "footer";
+@import "kv";
+
+main {
+  section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    .col-md-1000 {
+      @include media-breakpoint-up(md) {
+        max-width: 1040px;
+      }
+    }
+    &.bonus {
+      background-color: #E9E8E8;
+    }
+    &.sets {
+      background-color: #E9E8E8;
+    }
+    &.description {
+      @include fs(18);
+    }
+    &.others {
+      background: linear-gradient(180deg, #E5D6B7 0%, #BFAA8D 100%);
+    }
+  }
+  h2 {
+    @include fs(22);
+    gap: 15px;
+    @include media-breakpoint-up(md) {
+      @include fs(32);
+    }
+    &.text-primary {
+      color: #BCA88A;
+    }
+    img {
+      width: 60px;
+      border-radius: 10px;
+      @include media-breakpoint-up(md) {
+        width: 80px;
+      }
+    }
+  }
+  .h3 {
+    @include fs(18);
+    @include media-breakpoint-up(md) {
+      @include fs(26);
+    }
+  }
+  .podcasts-badges {
+    gap: 10px;
+  }
+}

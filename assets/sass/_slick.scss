@@ -1,0 +1,46 @@
+.slick-prev, .slick-next {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  background-color: #DDC798;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  z-index: 1;
+  &::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    margin: auto;
+    border-style: solid;
+  }
+}
+
+.slick-prev {
+  left: 0;
+  &::before {
+    border-width: 8px 12px 8px 0;
+    border-color: transparent $white transparent transparent;
+  }
+}
+
+.slick-next {
+  right: 0;
+  &::before {
+    border-width: 8px 0 8px 12px;
+    border-color: transparent transparent transparent $white;
+  }
+}
+
+.slick-prev.slick-disabled, .slick-next.slick-disabled {
+  opacity: .25;
+}

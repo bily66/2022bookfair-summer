@@ -1,0 +1,26 @@
+<svg id="_層_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 680">
+  <defs>
+    <style>
+      .cls-4 {
+        fill: url(#linear-gradient-2);
+        opacity: .84;
+      }
+      .cls-9 {
+        opacity: .8;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-173" y1="17033.67" x2="-180.63" y2="17200.59" gradientTransform="translate(183.5 17725.98) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a88b5f" />
+      <stop offset=".15" stop-color="#a88b5f" />
+      <stop offset=".37" stop-color="#c2a87b" />
+      <stop offset=".61" stop-color="#ddc798" />
+      <stop offset=".72" stop-color="#ead6a9" />
+      <stop offset=".84" stop-color="#ddc798" />
+      <stop offset="1" stop-color="#a88b5f" />
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-768.54" y1="16983.95" x2="-776.18" y2="17150.87" xlink:href="#linear-gradient" />
+  </defs>
+  <g class="cls-9">
+    <polygon class="cls-4" points="954.51 756.61 954.53 756.61 994.2 687.78 954.53 618.95 954.51 618.95 914.84 687.78 954.51 756.61" />
+  </g>
+</svg>

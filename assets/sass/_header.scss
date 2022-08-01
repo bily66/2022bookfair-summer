@@ -1,0 +1,65 @@
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 2;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  a.logo {
+    display: block;
+    img {
+      width: 120px;
+    }
+  }
+  ul {
+    @include list(0, 0, none);
+    display: flex;
+    gap: 10px;
+    @include media-breakpoint-up(md) {
+      position: relative;
+      top: -10px;
+    }
+    @include media-breakpoint-down(md) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      justify-content: center;
+    }
+    li {
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      color: $black;
+      font-size: 14px;
+      text-align: center;
+      z-index: 1;
+      @include media-breakpoint-up(md) {
+        padding: 10px 20px;
+      }
+      &::before {
+        @include beforeafter('', block);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(99.81deg, #A88B5F 12.01%, #A88B5F 23.54%, #C3AA7B 40.79%, #DDC798 58.91%, #EAD6A9 67.13%, #DDC798 76.18%, #A88B5F 88.53%);
+        opacity: 0.8;
+        @include media-breakpoint-up(md) {
+          border-radius: 0 0 10px 10px;
+        }
+        @include media-breakpoint-down(md) {
+          border-radius: 10px 10px 0 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,175 @@
+.opening {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  @include media-breakpoint-down(md) {
+    height: 90vh;
+  }
+  &::before {
+    @include beforeafter('', block);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, rgba(233, 232, 232, 0) 15.65%, rgb(233, 232, 232) 58.0421%);
+    z-index: 1;
+    @include media-breakpoint-down(md) {
+      opacity: 0.8;
+    }
+  }
+  .kv-1 {
+    @include media-breakpoint-down(md) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: none;
+      width: auto;
+      height: 90vh;
+    }
+  }
+  .kv-2, .kv-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .kv-2 {
+    width: 100%;
+    opacity: .9;
+    z-index: 0;
+    img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      animation: kvOpacity 3s infinite forwards alternate linear;
+      @include media-breakpoint-up(md) {
+        left: 0;
+      }
+      @include media-breakpoint-down(md) {
+        right: 0;
+        max-width: none;
+        width: auto !important;
+        height: 90vh;
+        margin-left: -50vw;
+      }
+      &.diamond-2 {
+        animation-delay: 0.2s;
+      }
+      &.diamond-3 {
+        animation-delay: 0.8s;
+      }
+      &.diamond-4 {
+        animation-delay: 0.6s;
+      }
+      &.diamond-5 {
+        animation-delay: 0.4s;
+      }
+      &.diamond-6 {
+        animation-delay: 1.4s;
+      }
+      &.diamond-7 {
+        animation-delay: 1.2s;
+      }
+      &.diamond-8 {
+        animation-delay: 1s;
+      }
+    }
+  }
+  .kv-3 {
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    animation: kvLine 4s infinite forwards linear;
+    z-index: 1;
+    img {
+      position: absolute;
+      bottom: 0;
+      left: -50vw;
+      width: 250vw;
+      max-width: none;
+      transform: translateY(-30%);
+      @include media-breakpoint-up(md) {
+        left: 0;
+        width: 100vw;
+        transform: translateY(0);
+      }
+    }
+  }
+  .container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: 1;
+    .row {
+      height: 100%;
+      align-items: center;
+      @include media-breakpoint-down(md) {
+        align-content: center;
+      }
+    }
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 0;
+    }
+    h1 img {
+      height: 44px;
+      @include media-breakpoint-up(md) {
+        height: 68px;
+      }
+    }
+    h3 img {
+      height: 16px;
+      @include media-breakpoint-up(md) {
+        height: 26px;
+      }
+    }
+    p img {
+      height: 24px;
+      @include media-breakpoint-up(md) {
+        height: 36px;
+      }
+    }
+  }
+}
+
+@keyframes kvOpacity {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes kvLine {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  40% {
+    width: 100%;
+  }
+  75% {
+    opacity: 1;
+  }
+  79% {
+    width: 100%;
+  }
+  80% {
+    width: 0%;
+    opacity: 0;
+  }
+}

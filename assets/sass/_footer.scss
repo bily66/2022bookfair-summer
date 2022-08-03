@@ -3,7 +3,43 @@ footer {
   padding-bottom: 30px;
   font-size: 14px;
   background-color: #E5E5E5;
+  @include media-breakpoint-down(md) {
+    position: relative;
+    z-index: 2;
+  }
+  ul {
+    @include list(0, 0, none);
+    display: flex;
+    align-items: center;
+    &.sns {
+      gap: 20px;
+    }
+    &.app {
+      gap: 10px;
+    }
+  }
   a {
     color: $black;
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      path {
+        fill: $black;
+        transition: fill 0.3s;
+      }
+    }
+    img {
+      height: 40px;
+    }
+    &.facebook:hover path {
+      fill: #1877f2;
+    }
+    &.line:hover path {
+      fill: #00c300;
+    }
+    &.instagram:hover path {
+      fill: #e4405f;
+    }
   }
 }

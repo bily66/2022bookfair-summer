@@ -1,8 +1,8 @@
 $hamburger: (
   width:  42px,
   height: 33px,
-  unit:   3px,
-  gap:    5px
+  unit:   2px,
+  gap:    6px
 );
 
 .hamburger {
@@ -13,23 +13,17 @@ $hamburger: (
   border: 0;
   background-color: transparent;
   cursor: pointer;
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     display: none;
   }
   span {
     display: block;
     width: 100%;
     height: map-get($hamburger, unit);
-    background-color: $light;
+    background-color: $black;
     border-radius: 10px;
     + span {
       margin-top: map-get($hamburger, gap);
-    }
-    @at-root {
-      .active#{&},
-      :hover#{&} {
-        background-color: $white;
-      }
     }
   }
   @include media-breakpoint-down(lg) {
@@ -39,7 +33,7 @@ $hamburger: (
         // height: map-get($hamburger, unit) - 1px;
         margin-top: 0;
         &:nth-child(1) {
-          transform: rotate(-45deg) translate(-3px, 0px);
+          transform: rotate(-45deg) translate(-2px, -1px);
         }
         &:nth-child(2) {
           display: none;

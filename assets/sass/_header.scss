@@ -9,7 +9,12 @@ header {
   .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    @include media-breakpoint-up(md) {
+      justify-content: space-between;
+    }
+    @include media-breakpoint-down(md) {
+      padding-left: 10px;
+    }
   }
   a.logo {
     display: block;

@@ -4212,8 +4212,32 @@ ol, ul {
   border-style: solid;
 }
 
-.slick-prev {
-  left: 0;
+.slick-prev:hover, .slick-next:hover {
+  background-color: #d7bd85;
+}
+
+@media (max-width: 767.98px) {
+  .slick-prev {
+    left: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .slick-prev {
+    right: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .slick-prev {
+    right: calc(100% + 5px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .slick-prev {
+    right: calc(100% + 20px);
+  }
 }
 
 .slick-prev::before {
@@ -4221,8 +4245,28 @@ ol, ul {
   border-color: transparent #fff transparent transparent;
 }
 
-.slick-next {
-  right: 0;
+@media (max-width: 767.98px) {
+  .slick-next {
+    right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .slick-next {
+    left: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .slick-next {
+    left: calc(100% + 5px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .slick-next {
+    left: calc(100% + 20px);
+  }
 }
 
 .slick-next::before {
@@ -4232,6 +4276,23 @@ ol, ul {
 
 .slick-prev.slick-disabled, .slick-next.slick-disabled {
   opacity: .25;
+}
+
+.slider-set-thumbnails {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 6.875rem;
+  -webkit-transform: translateX(-2rem);
+          transform: translateX(-2rem);
+}
+
+@media (min-width: 768px) {
+  .slider-set-thumbnails {
+    width: 10rem;
+    -webkit-transform: translateX(-3rem);
+            transform: translateX(-3rem);
+  }
 }
 
 header {
@@ -4251,9 +4312,20 @@ header .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  header .container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media (max-width: 767.98px) {
+  header .container {
+    padding-left: 10px;
+  }
 }
 
 header a.logo {
@@ -4335,8 +4407,6 @@ header ul li::before {
 }
 
 nav {
-  background: -webkit-gradient(linear, left top, left bottom, from(#E5D6B7), to(#BFAA8D));
-  background: linear-gradient(180deg, #E5D6B7 0%, #BFAA8D 100%);
   z-index: 1;
 }
 
@@ -4345,12 +4415,25 @@ nav {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    display: block !important;
+    height: auto !important;
+    opacity: 1 !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#E5D6B7), to(#BFAA8D));
+    background: linear-gradient(180deg, #E5D6B7 0%, #BFAA8D 100%);
   }
 }
 
 @media (max-width: 767.98px) {
   nav {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 64px;
+    width: 100%;
+    background-color: rgba(236, 236, 236, 0.9);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
   }
 }
 
@@ -4358,15 +4441,20 @@ nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+}
+
+@media (min-width: 768px) {
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 nav ul a {
@@ -4377,6 +4465,13 @@ nav ul a {
 }
 
 @media (min-width: 768px) {
+  nav ul a {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+
+@media (min-width: 992px) {
   nav ul a {
     padding-left: 45px;
     padding-right: 45px;
@@ -4397,7 +4492,7 @@ nav ul a:hover {
   cursor: pointer;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .hamburger {
     display: none;
   }
@@ -4406,18 +4501,13 @@ nav ul a:hover {
 .hamburger span {
   display: block;
   width: 100%;
-  height: 3px;
-  background-color: #f8f9fa;
+  height: 2px;
+  background-color: #000;
   border-radius: 10px;
 }
 
 .hamburger span + span {
-  margin-top: 5px;
-}
-
-.active.hamburger span,
-:hover.hamburger span {
-  background-color: #fff;
+  margin-top: 6px;
 }
 
 @media (max-width: 991.98px) {
@@ -4426,8 +4516,8 @@ nav ul a:hover {
     margin-top: 0;
   }
   .hamburger.opened span:nth-child(1) {
-    -webkit-transform: rotate(-45deg) translate(-3px, 0px);
-            transform: rotate(-45deg) translate(-3px, 0px);
+    -webkit-transform: rotate(-45deg) translate(-2px, -1px);
+            transform: rotate(-45deg) translate(-2px, -1px);
   }
   .hamburger.opened span:nth-child(2) {
     display: none;
@@ -4445,8 +4535,63 @@ footer {
   background-color: #E5E5E5;
 }
 
+@media (max-width: 767.98px) {
+  footer {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer ul.sns {
+  gap: 20px;
+}
+
+footer ul.app {
+  gap: 10px;
+}
+
 footer a {
   color: #000;
+}
+
+footer a svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+footer a svg path {
+  fill: #000;
+  -webkit-transition: fill 0.3s;
+  transition: fill 0.3s;
+}
+
+footer a img {
+  height: 40px;
+}
+
+footer a.facebook:hover path {
+  fill: #1877f2;
+}
+
+footer a.line:hover path {
+  fill: #00c300;
+}
+
+footer a.instagram:hover path {
+  fill: #e4405f;
 }
 
 .opening {
@@ -4727,7 +4872,20 @@ footer a {
   }
 }
 
+a.text-link {
+  color: #A88B5F;
+}
+
+a.text-link:hover {
+  color: #89704b;
+}
+
+.position-relative {
+  position: relative;
+}
+
 main section {
+  position: relative;
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -4738,16 +4896,92 @@ main section {
   }
 }
 
+main section .anchor {
+  position: absolute;
+  top: -60px;
+}
+
 main section.bonus {
   background-color: #E9E8E8;
+  background-image: url("../images/bg-bonus.svg");
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+@media (min-width: 1200px) {
+  main section.bonus {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  main section.bonus {
+    background-size: cover;
+  }
 }
 
 main section.sets {
   background-color: #E9E8E8;
+  background-image: url("../images/bg-sets.svg");
+  background-repeat: repeat-y;
+  background-position: top right;
+}
+
+@media (min-width: 1200px) {
+  main section.sets {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  main section.sets {
+    background-size: cover;
+  }
 }
 
 main section.description {
+  padding-top: 60px;
+  padding-bottom: 200px;
+  overflow: hidden;
   font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  main section.description {
+    padding-top: 160px;
+    padding-bottom: 360px;
+  }
+}
+
+main section.description .lines {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 130vw;
+  max-width: none;
+  -webkit-transform: translate(-60%, -60%);
+          transform: translate(-60%, -60%);
+  z-index: -1;
+}
+
+main section.digital {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-image: url("../images/bg-digital.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 1200px) {
+  main section.digital {
+    background-position: center;
+  }
+}
+
+@media (max-width: 991.98px) {
+  main section.digital {
+    background-position: center left;
+  }
 }
 
 main section.others {
@@ -4755,19 +4989,30 @@ main section.others {
   background: linear-gradient(180deg, #E5D6B7 0%, #BFAA8D 100%);
 }
 
-main h2 {
+main h2, main .h2 {
   font-size: 1.375rem;
-  gap: 15px;
 }
 
 @media (min-width: 768px) {
-  main h2 {
+  main h2, main .h2 {
     font-size: 2rem;
   }
 }
 
-main h2.text-primary {
+main h2.text-primary, main .h2.text-primary {
   color: #BCA88A;
+}
+
+main h2.text-green, main .h2.text-green {
+  color: #019E97;
+}
+
+main h2.text-blue, main .h2.text-blue {
+  color: #469FE3;
+}
+
+main h2 {
+  gap: 15px;
 }
 
 main h2 img {

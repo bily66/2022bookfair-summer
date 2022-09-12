@@ -1,3 +1,37 @@
+
+
+.podcast img{
+  border-radius: 10px;
+    border: 1px solid #c0c0c0;
+    box-shadow: #cfcfcf 0px 0 10px 1px;
+}
+
+.sets img{
+  border-radius: 10px;
+    border: 1px solid #efefef;
+}
+.bonus img{
+  border-radius: 10px;
+    border: 1px solid #acacac;
+    box-shadow: #acacac 0px 0 10px 1px;
+}
+.description img{
+  border-radius: 10px;
+    border: 1px solid #acacac;
+    box-shadow: #acacac 0px 0 10px 1px;
+    background-color:#fff;
+}
+.others img{
+  border-radius: 10px;
+    border: 1px solid #acacac;
+    box-shadow: #aa9366 0px 0 12px 1px;
+}
+
+.digital .bannerimg{
+  border-radius: 10px;
+    box-shadow: #ccc 0px 0 10px 1px;
+}
+
 #main {
   overflow: hidden;
 }

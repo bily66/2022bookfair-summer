@@ -5,12 +5,12 @@ AOS.init();
 
 $('.hamburger').on('click', function() {
   $(this).toggleClass('opened');
-  $('nav').slideToggle();
+  $('nav').stop(true).slideToggle();
 })
 
 $('nav a').on('click', function() {
   $('.hamburger').removeClass('opened');
-  $('nav').slideUp();
+  $('nav').stop(true).slideUp();
 })
 
 $('.autoplay').slick({
@@ -20,10 +20,11 @@ $('.autoplay').slick({
   autoplaySpeed: 4000,
   arrows: false,
 });
-
 $('.slider-set').slick({
   slidesToScroll: 1,
   slidesToShow: 1,
+  autoplay: true,
+  autoplaySpeed: 4000,
   asNavFor: '.slider-set-thumbnails',
 });
 
@@ -47,6 +48,27 @@ $('.slider-set').on('beforeChange', function (event, slick, currentSlide, nextSl
   $('.slider-set-thumbnails .slick-slide').eq(mySlideNumber).addClass('slick-active');
 });
 
+// 新增
+$('.addBox').slick({
+  // slidesToShow: 1,
+  // slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 4500,
+  arrows: false,
+  loop: true,
+  fade: true,
+  speed: 1200,
+  pauseOnFocus: false
+});
+
+$(window).on('scroll', function() {
+  let winT = $(window).scrollTop()
+  if(winT <= 30){
+    $('.addBlock, .shareLinkbox').addClass('opct')
+  }else{
+    $('.addBlock, .shareLinkbox').removeClass('opct')
+  }
+}).scroll()
 $(window).on('resize', function() {
     let width = $(window).width();
-});
+})
